@@ -1,34 +1,37 @@
 <div class="container"
-    fxLayout="row"
+    fxLayout="row wrap"
     fxLayout.sm="column"
     fxLayout.xs="column"
     fxLayoutAlign.gt-md="space-around center"
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="60">
-    	<div fxFlex>
-		<mat-card *ngIf="dish">
+<div fxFlex="49">
+    	
+		<mat-card >
 			<mat-card-header>
 				<mat-card-title>
 					<h3>{{dish.name | uppercase}}</h3>		
 				</mat-card-title>
 			</mat-card-header>	
-			<img mat-cat-image src="{{dish.image}}" alt="dish.name">
+			<img mat-cat-image src="{{dish.image}}" alt="dish.name" height="310px">
 			<mat-card-content>
+				<br>
+			<hr>
 			<p>{{dish.description}}</p>
 			</mat-card-content>
 			<mat-card-actions>
+        		<button mat-button (click)="goBack()">BACK</button>
 				<button mat-button>Like</button>	
 				<button mat-button>Share</button>
 			</mat-card-actions>
 		</mat-card>
-		</div>	 
-  </div>
+			 
+</div>
 
-  <div fxFlex="60">
-    	<div fxFlex>
-		<mat-card *ngIf="dish">
+  <div fxFlex="49">
+  
+		<mat-card >
 			<mat-card-header>
 				<mat-card-title>
 					<h3>Comments</h3>		
@@ -37,11 +40,10 @@
 			<mat-card-content *ngFor="let bitch of dish.comments">
 				<mat-list>
 					<p>{{bitch.comment}} <br>{{bitch.rating}} Stars <br> -- {{bitch.author}} {{ bitch.date | date:'mediumDate' }}   </p>
-					
 				</mat-list>
 			</mat-card-content>
 		</mat-card>
-		</div>	 
+		
   </div>
 
 </div>
