@@ -23,11 +23,12 @@ export class DishdetailsComponent implements OnInit {
   ngOnInit() {
   	let id= this.route.snapshot.params['id'];
   	// alert(this.dish);
-    this.dish = this.dishService.getDish(id);
+    this.dishService.getDish(id)
+    .then((dish)=>this.dish=dish);
+
   }
 
   goBack():void {
-   alert(this.dish);
    this.location.back();
   }
 
