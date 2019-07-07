@@ -10,3 +10,4 @@ npm install --save hammerjs@2.0.8
 npm install --save @angular/flex-layout@6.0.0-beta
 
 npm install font-awesome@4.7.0 --save
+npm install @angular/animations@latest --save
